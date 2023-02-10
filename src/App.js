@@ -29,7 +29,7 @@ function App() {
         <div className="App">
             <Header/>
             <MenuBar/>
-            <TodoList/>
+            <TodoList todo={todo} setTodo={setTodo}/>
         </div>
   );
 }
