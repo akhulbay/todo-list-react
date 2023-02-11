@@ -27,10 +27,8 @@ function App() {
   return (
     <div className="App">
       <Header />
-      <div className="AppBody">
-        <MenuBar />
-        <TodoList />
-      </div>
+      <MenuBar />
+      <TodoList todo={todo} setTodo={setTodo} />
     </div>
   );
 }
