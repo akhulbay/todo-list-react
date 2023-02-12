@@ -1,0 +1,78 @@
+
+.addToDoContent {
+    margin-top: 2%;
+    width: 500px;
+    margin-left: 18%;
+    border: 1px solid lightgrey;
+    border-radius: 10px;
+}
+
+.addToDoContent > button {
+    margin-left: 78%;
+    margin-bottom: 1%;
+    padding: 8px 12px;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 14px;
+    color: black;
+    cursor: pointer;
+}
+
+.addToDoContent > hr {
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.addToDoContent > textarea {
+    margin-top: 2%;
+    overflow: auto;
+    resize: none;
+    border: 0 none;
+    height: auto;
+    outline: none;
+    font-size: 15px;
+}
+
+.addToDoContentOptions {
+    display: flex;
+    margin-left: 12px;
+    margin-right: 12px;
+}
+
+.addToDoContentOptionsPriority {
+    border-radius: 5px;
+    background-color: #282c34;
+    color: lightgrey;
+    cursor: pointer;
+}
+
+.addToDoContentOptionsPriority > svg {
+    padding-top: 0;
+    padding-left: 7px;
+}
+.addToDoContentOptionsPriority > span {
+    padding-left: 3px;
+    padding-right: 7px;
+    font-size: 14px;
+}
+
+.addToDoContentOptionsTags {
+    cursor: pointer;
+    display: flex;
+    margin-left: 2%;
+    border-radius: 5px;
+    background-color: #282c34;
+    color: lightgrey;
+}
+
+.addToDoContentOptionsTags > svg {
+    margin-top: 5px;
+    padding-left: 7px;
+}
+.addToDoContentOptionsTags > span {
+    margin-top: 2px;
+    padding-left: 3px;
+    padding-right: 7px;
+    font-size: 14px;
+}

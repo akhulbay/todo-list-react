@@ -1,0 +1,43 @@
+.container {
+    padding-left: 20%;
+    border: 1px black solid;
+    width: 800px;
+}
+
+.toDoList {
+
+}
+
+.AddToDo {
+
+}
+
+.toDoBlockContent {
+    display: flex;
+    width: 100%;
+}
+
+.toDoBlockContent>div {
+    display: flex;
+}
+
+.toDoBlockContentTitle{
+    overflow-wrap: break-word ;
+    margin-top: 8px;
+    width: 720px;
+    text-align: left;
+}
+
+.toDoBlockContentEdit {
+    margin-top: 10px;
+    text-align: right;
+}
+
+.toDoBlockContent>div>svg {
+    margin: 10px;
+}
+
+.toDoBlockContentEditInput > input {
+    outline: none;
+    border: none;
+}
