@@ -1,0 +1,29 @@
+.ul {
+    display: flex;
+    margin-top: 20px;
+    flex-direction: column;
+    gap: 30px;
+    padding-left: 0;
+}
+
+.ul li {
+    font-family: 'PT Sans', sans-serif;
+    font-weight: 400;
+    font-size: 1.1em;
+    padding: 10px 0 10px 80px;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    cursor: pointer;
+}
+
+.ul li:hover{
+    background-color: rgb(233, 233, 233);
+    border-radius: 30px;
+    
+}
+
+.DropMenu{
+    background-color: black;
+    opacity: 0.5;
+}
