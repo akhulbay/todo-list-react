@@ -1,0 +1,82 @@
+.Header {
+    width: 1440px;
+    height: 44px;
+    background-color: #db4c3f;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 0 15px 10px;
+
+}
+.Container {
+    display: flex;
+}
+.Search {
+    margin-top: 15px;
+    margin-left: 40px;
+    width: 218px;
+    height: 28px;
+    border: 1px solid transparent;
+    border-radius: 20px;
+    color: white;
+    padding: 5px 0 5px 34px;
+    background: hsla(0,0%,100%,.2);
+    transition: width .2s ease-in,background .15s cubic-bezier(.4,0,.2,1);
+}
+.Search::placeholder {
+    color: black;
+}
+.Searchicon {
+    width: 18px;
+    height: 18px;
+    margin-left: -27px;
+    margin-bottom: -3px;
+}
+.Homepage {
+    height: 28px;
+    min-width: 28px;
+    border-radius: 3px;
+    margin-top: 14px;
+    margin-left:10px;
+}
+.Container2 {
+    align-items: center;
+    display: flex;
+    height: 44px;
+    padding: 0 12px;
+}
+.Percentage {
+    width: 60px;
+    height: 32px;
+    margin-left: 920px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.Percentageicon {
+    width: 23px;
+    height: 23px;
+
+}
+.Question {
+    width: 60px;
+    height: 32px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.Questionicon {
+    width: 19px;
+    height: 19px;
+}
+.Account {
+    width: 60px;
+    height: 32px;
+    margin-top: 15px;
+    background-color: transparent;
+    border: 1px solid transparent;
+}
+.Accounticon {
+    width: 21px;
+    height: 21px;
+}
