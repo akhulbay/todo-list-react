@@ -24,11 +24,34 @@ function App() {
     },
   ]);
 
+  const items = [
+    {
+      id: 0,
+      title: "All",
+    },
+    {
+      id: 1,
+      title: "University/Work",
+    },
+    {
+      id: 2,
+      title: "Home",
+    },
+    {
+      id: 3,
+      title: "Personal",
+    },
+    {
+      id: 4,
+      title: "Payment",
+    },
+  ];
+
   return (
     <div className="App">
-      <Header/>
+      <Header />
       <div className="AppBody">
-        <MenuBar/>
+        <MenuBar items={items} />
         <TodoList todo={todo} setTodo={setTodo} />
       </div>
     </div>
