@@ -28,22 +28,27 @@ function App() {
     {
       id: 0,
       title: "All",
+      color: "white",
     },
     {
       id: 1,
       title: "University/Work",
+      color: "blue",
     },
     {
       id: 2,
       title: "Home",
+      color: "aqua",
     },
     {
       id: 3,
       title: "Personal",
+      color: "orange",
     },
     {
       id: 4,
       title: "Payment",
+      color: "red",
     },
   ];
 

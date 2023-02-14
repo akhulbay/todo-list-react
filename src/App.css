@@ -3,7 +3,6 @@
 .App {
   font-family: "Poppins";
   text-align: center;
-  
 }
 
 .App-logo {
@@ -43,6 +42,6 @@
 
 .AppBody {
   display: flex;
-  border-radius: 5px;
   background-color: #656565;
+  height: 1000px;
 }
