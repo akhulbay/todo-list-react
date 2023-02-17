@@ -6,7 +6,7 @@ function TagsList({items, setHideHiddenTagsDiv, setTag}) {
             <ul>
                 {
                     items.map(item => (
-                    <li className={as.tagBlock} key={item.id} onClick={() => {setHideHiddenTagsDiv(true); setTag(item)}}>
+                    <li className={as.tagBlock} key={item.id} onClick={() => {setHideHiddenTagsDiv(true); setTag(item)}} style={{color: item.color}}>
                         {
                         item.title
                         }

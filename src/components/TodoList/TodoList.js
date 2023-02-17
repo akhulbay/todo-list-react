@@ -48,18 +48,30 @@ function TodoList({ todo, setTodo , items, priorities}) {
                                             <input onChange={ (e) => setValue(e.target.value)} onKeyUp={(e)=>handleKeyUp(e, item.id)} value={value}/>
                                         </div>
                                         :
-                                        <div>
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                 fill="currentColor" className="bi bi-app" viewBox="0 0 16 16" onClick={ () => deleteToDo(item.id)} color={item.priority.color}>
-                                                <path
-                                                    d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
-                                            </svg>
+                                        <div className={ts.toDoBlockContentDone}>
+                                            <button type={"button"} role={"checkbox"} style={{borderColor: item.priority.color}} onClick={ () => deleteToDo(item.id)}>
+                                                <div className={ts.toDoBlockContentDoneIconDiv}>
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                         fill="currentColor" className="bi bi-check"
+                                                         viewBox="0 0 16 16" style={{color: item.priority.color}}>
+                                                        <path
+                                                            d="M10.97 4.97a.75.75 0 0 1 1.07 1.05l-3.99 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.267.267 0 0 1 .02-.022z"/>
+                                                    </svg>
+                                                </div>
+                                            </button>
                                         </div>
                                 }
                                 {
                                     edit === item.id ?
                                         <div className={ts.toDoBlockContentEditButton}>
-                                            <button onClick={ () => saveTodo(item.id)} onKeyUp={ () => handleKeyUp()}>Сохранить</button>
+                                            {/*<button onClick={ () => saveTodo(item.id)} onKeyUp={ () => handleKeyUp()}>Сохранить</button>*/}
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22"
+                                                 fill="currentColor" className="bi bi-check-square" viewBox="0 0 16 16" onClick={ () => saveTodo(item.id)} onKeyUp={ () => handleKeyUp()}>
+                                                <path
+                                                    d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+                                                <path
+                                                    d="M10.97 4.97a.75.75 0 0 1 1.071 1.05l-3.992 4.99a.75.75 0 0 1-1.08.02L4.324 8.384a.75.75 0 1 1 1.06-1.06l2.094 2.093 3.473-4.425a.235.235 0 0 1 .02-.022z"/>
+                                            </svg>
                                         </div>
                                         :
                                         <div>
@@ -85,6 +97,15 @@ function TodoList({ todo, setTodo , items, priorities}) {
                                                 }
                                             </div>
                                             {/*<button onClick={ () => {deleteToDo(item.id)}}>Удалить</button>*/}
+                                            <div className={ts.toDoBlockContentDelete} >
+                                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
+                                                     fill="currentColor" className="bi bi-x-circle" viewBox="0 0 16 16" onClick={ () => deleteToDo(item.id)}>
+                                                    <path
+                                                        d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                                                    <path
+                                                        d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                                                </svg>
+                                            </div>
                                             <div className={ts.toDoBlockContentEdit}>
                                                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
                                                      fill="currentColor" className="bi bi-pencil-square"

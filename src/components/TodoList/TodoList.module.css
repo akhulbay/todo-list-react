@@ -40,22 +40,100 @@
 }
 
 .toDoBlockContentTitle{
-    overflow-wrap: break-word ;
+    overflow-wrap: break-word;
+    margin-left: 5px;
     margin-top: 8px;
-    width: 720px;
+    width: 700px;
     text-align: left;
 }
 
 .toDoBlockContentEdit {
+    cursor: pointer;
     margin-top: 10px;
+    margin-left: 10px;
     text-align: right;
 }
 
+.toDoBlockContentEdit>svg {
+    padding: 2px;
+}
+
+.toDoBlockContentEdit>svg:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.toDoBlockContentDelete {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: right
+}
+
+.toDoBlockContentDelete>svg {
+    padding: 2px;
+
+}
+
+.toDoBlockContentDelete>svg:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
 .toDoBlockContent>div>svg {
     margin: 10px;
 }
 
 .toDoBlockContentEditInput > input {
+    font-size: 16px;
+    margin: 10px 5px;
+    width: 725px;
     outline: none;
     border: none;
+
+}
+
+.toDoBlockContentEditButton>svg {
+    padding: 3px;
+    color: white;
+}
+
+.toDoBlockContentEditButton>svg:hover {
+    padding: 3px;
+    background-color: #918787;
+    border-radius: 5px;
+}
+
+.toDoBlockContentDone {
+
+}
+
+.toDoBlockContentDone>button {
+    margin-top: 8px;
+    margin-left: 5px;
+    display: flex;
+    cursor: pointer;
+    width: 24px;
+    height: 24px;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    background-color: #3d3d3d;
+}
+
+.toDoBlockContentDone>svg{
+    padding: 1px;
+}
+
+.toDoBlockContentDone>svg:hover {
+    fill: red;
+}
+
+.toDoBlockContentDoneIconDiv>svg {
+    display: none;
+    margin-top: 5px;
+}
+
+.toDoBlockContentDone>button:hover .toDoBlockContentDoneIconDiv>svg{
+    margin: 0;
+    display: block;
 }
