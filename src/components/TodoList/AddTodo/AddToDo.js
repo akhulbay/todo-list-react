@@ -1,14 +1,22 @@
 import as from "./AddTodo.module.css";
 import {useState} from "react";
 import uuid from "react-uuid";
+import PriorityList from "./PriorityList";
+import TagsList from "./TagsList";
 
 
-function AddTodo({todo, setTodo}) {
+function AddTodo({todo, setTodo, items, priorities}) {
+
 
     const [value, setValue] = useState('');
+    const [hideHiddenPriorityDiv, setHideHiddenPriorityDiv] = useState(true);
+    const [hideHiddenTagsDiv, setHideHiddenTagsDiv] = useState(true);
+    const [priority, setPriority] = useState(priorities.at(3))
+    const [tag, setTag] = useState(null)
 
     function handleKeyUp(e) {
         if (e.key === "Enter") saveTodo();
+
     }
 
     function saveTodo() {
@@ -17,9 +25,10 @@ function AddTodo({todo, setTodo}) {
                 id: uuid(),
                 title: value,
                 status: true,
+                priority: priority,
+                tag: tag
             }]
         )
-
         setValue('');
     }
 
@@ -36,8 +45,14 @@ function AddTodo({todo, setTodo}) {
                         onChange={ (e) => setValue(e.target.value)}
                         maxLength={150}
                     ></textarea>
+                    <div className={`hiddenPriorities ${hideHiddenPriorityDiv ? " hide-div" : ""}`} >
+                        <PriorityList priorities={priorities} setHideHiddenPriorityDiv={setHideHiddenPriorityDiv} setPriority={setPriority}/>
+                    </div>
+                    <div className={`hiddenTags ${hideHiddenTagsDiv ? " hide-div" : ""}`} >
+                        <TagsList items={items} setHideHiddenTagsDiv={setHideHiddenTagsDiv} setTag={setTag}/>
+                    </div>
                     <div className={as.addToDoContentOptions}>
-                        <div className={as.addToDoContentOptionsPriority}>
+                        <div className={as.addToDoContentOptionsPriority} onClick={() => setHideHiddenPriorityDiv(false)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor"
                                  className="bi bi-flag" viewBox="0 0 16 16">
                                 <path
@@ -45,7 +60,7 @@ function AddTodo({todo, setTodo}) {
                             </svg>
                             <span>Priority</span>
                         </div>
-                        <div className={as.addToDoContentOptionsTags}>
+                        <div className={as.addToDoContentOptionsTags} onClick={() => setHideHiddenTagsDiv(false)}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                                  className="bi bi-tag" viewBox="0 0 16 16">
                                 <path

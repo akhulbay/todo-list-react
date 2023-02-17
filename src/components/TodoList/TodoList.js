@@ -2,7 +2,7 @@ import ts from "./TodoList.module.css";
 import AddTodo from "./AddTodo/AddToDo";
 import {useState} from "react";
 
-function TodoList({ todo, setTodo }) {
+function TodoList({ todo, setTodo , items, priorities}) {
 
     const [edit, setEdit] = useState(null);
     const [value, setValue] = useState('')
@@ -50,7 +50,7 @@ function TodoList({ todo, setTodo }) {
                                         :
                                         <div>
                                             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20"
-                                                 fill="currentColor" className="bi bi-app" viewBox="0 0 16 16" onClick={ () => deleteToDo(item.id)}>
+                                                 fill="currentColor" className="bi bi-app" viewBox="0 0 16 16" onClick={ () => deleteToDo(item.id)} color={item.priority.color}>
                                                 <path
                                                     d="M11 2a3 3 0 0 1 3 3v6a3 3 0 0 1-3 3H5a3 3 0 0 1-3-3V5a3 3 0 0 1 3-3h6zM5 1a4 4 0 0 0-4 4v6a4 4 0 0 0 4 4h6a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5z"/>
                                             </svg>
@@ -63,8 +63,26 @@ function TodoList({ todo, setTodo }) {
                                         </div>
                                         :
                                         <div>
-                                            <div className={ts.toDoBlockContentTitle}>
-                                                {item.title}
+                                            <div className={ts.toDoBlockContentTitleAndTag}>
+                                                <div className={ts.toDoBlockContentTitle}>
+                                                    {item.title}
+                                                </div>
+                                                {
+                                                    item.tag !== null ?
+                                                    <div className={ts.toDoBlockContentTag}>
+                                                        <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13"
+                                                             fill="currentColor" className="bi bi-tag-fill"
+                                                             viewBox="0 0 16 16" color={item.tag.color}>
+                                                            <path
+                                                                d="M2 1a1 1 0 0 0-1 1v4.586a1 1 0 0 0 .293.707l7 7a1 1 0 0 0 1.414 0l4.586-4.586a1 1 0 0 0 0-1.414l-7-7A1 1 0 0 0 6.586 1H2zm4 3.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+                                                        </svg>
+
+                                                        <span style={{color: item.tag.color}}>{item.tag.title}</span>
+                                                    </div>
+                                                        :
+                                                        <div className={ts.toDoBlockContentTag}>
+                                                        </div>
+                                                }
                                             </div>
                                             {/*<button onClick={ () => {deleteToDo(item.id)}}>Удалить</button>*/}
                                             <div className={ts.toDoBlockContentEdit}>
@@ -88,7 +106,7 @@ function TodoList({ todo, setTodo }) {
 
                 </div>
                 <div className={ts.AddTodo}>
-                    <AddTodo todo={todo} setTodo={setTodo}/>
+                    <AddTodo todo={todo} setTodo={setTodo} items={items} priorities={priorities}/>
                 </div>
             </div>
         </div>

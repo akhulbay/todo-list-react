@@ -45,3 +45,74 @@
   background-color: #656565;
   height: 1000px;
 }
+
+.hide-div {
+  display: none;
+}
+
+.hiddenPriorities {
+  z-index: 1;
+  position: absolute;
+  background-color: #918787;
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-left: 2px;
+  width: 105px;
+  font-size: 15px;
+}
+
+.hiddenPriorities > ul {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.hiddenPriorities > ul >li {
+  cursor: pointer;
+  margin-top: 3px;
+  list-style-type: none;
+}
+
+.hiddenPriorities > ul >li >svg {
+  margin-right: 5px;
+}
+
+.priorityBlock > hr {
+  margin: 0 10px;
+  outline: none;
+}
+
+.hide-div {
+  display: none;
+}
+
+.hiddenTags {
+  z-index: 1;
+  position: absolute;
+  background-color: #918787;
+  border-radius: 10px;
+  margin-top: 25px;
+  margin-left: 80px;
+  width: 105px;
+  font-size: 15px;
+}
+
+.hiddenTags > ul {
+  padding-inline-start: 0;
+  margin-block-start: 0;
+  margin-block-end: 0;
+}
+
+.hiddenTags > ul >li {
+  cursor: pointer;
+  list-style-type: none;
+}
+
+.hiddenTags > ul >li >svg {
+  margin-right: 5px;
+}
+
+.tagBlock > hr {
+  margin: 0 10px;
+  outline: none;
+}
