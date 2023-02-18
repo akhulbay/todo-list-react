@@ -45,14 +45,14 @@ function AddTodo({todo, setTodo, items, priorities}) {
                         onChange={ (e) => setValue(e.target.value)}
                         maxLength={150}
                     ></textarea>
-                    <div className={`hiddenPriorities ${hideHiddenPriorityDiv ? " hide-div" : ""}`} >
-                        <PriorityList priorities={priorities} setHideHiddenPriorityDiv={setHideHiddenPriorityDiv} setPriority={setPriority}/>
+                    <div className={`hiddenPriorities ${hideHiddenPriorityDiv ? " hide-div" : ""}`}  >
+                        <PriorityList priorities={priorities} setHideHiddenPriorityDiv={setHideHiddenPriorityDiv} setPriority={setPriority} />
                     </div>
-                    <div className={`hiddenTags ${hideHiddenTagsDiv ? " hide-div" : ""}`} >
+                    <div className={`hiddenTags ${hideHiddenTagsDiv ? " hide-div" : ""}`}>
                         <TagsList items={items} setHideHiddenTagsDiv={setHideHiddenTagsDiv} setTag={setTag}/>
                     </div>
                     <div className={as.addToDoContentOptions}>
-                        <div className={as.addToDoContentOptionsPriority} onClick={() => setHideHiddenPriorityDiv(false)}>
+                        <div className={as.addToDoContentOptionsPriority} onClick={() => {setHideHiddenPriorityDiv(false); setHideHiddenTagsDiv(true)} }>
                             <svg xmlns="http://www.w3.org/2000/svg" width="13" height="13" fill="currentColor"
                                  className="bi bi-flag" viewBox="0 0 16 16">
                                 <path
@@ -60,7 +60,7 @@ function AddTodo({todo, setTodo, items, priorities}) {
                             </svg>
                             <span>Priority</span>
                         </div>
-                        <div className={as.addToDoContentOptionsTags} onClick={() => setHideHiddenTagsDiv(false)}>
+                        <div className={as.addToDoContentOptionsTags} onClick={() => {setHideHiddenTagsDiv(false);setHideHiddenPriorityDiv(true) }}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" fill="currentColor"
                                  className="bi bi-tag" viewBox="0 0 16 16">
                                 <path
