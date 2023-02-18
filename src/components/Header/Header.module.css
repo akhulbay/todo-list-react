@@ -55,9 +55,9 @@
     border: 1px solid transparent;
 }
 .Percentageicon {
-    width: 23px;
-    height: 23px;
-
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
 }
 .Question {
     width: 60px;
@@ -67,8 +67,9 @@
     border: 1px solid transparent;
 }
 .Questionicon {
-    width: 19px;
-    height: 19px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }
 .Account {
     width: 60px;
@@ -78,6 +79,7 @@
     border: 1px solid transparent;
 }
 .Accounticon {
-    width: 21px;
-    height: 21px;
+    width: 22px;
+    height: 22px;
+    cursor: pointer;
 }
