@@ -90,6 +90,7 @@ function App() {
           setTodo={setTodo}
           items={items}
           priorities={priorities}
+          className="ToDoList"
         />
       </div>
     </div>
