@@ -29,7 +29,7 @@ function App() {
     },
   ];
 
-  const items = [
+  const [items, setItems] = useState([
     {
       id: 0,
       title: "all",
@@ -55,7 +55,7 @@ function App() {
       title: "payment",
       color: "red",
     },
-  ];
+  ]);
 
   const [todo, setTodo] = useState([
     {
@@ -84,7 +84,7 @@ function App() {
     <div className="App">
       <Header />
       <div className="AppBody">
-        <MenuBar items={items} />
+        <MenuBar items={items} setItems={setItems} />
         <TodoList
           todo={todo}
           setTodo={setTodo}
