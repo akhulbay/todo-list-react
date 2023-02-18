@@ -26,7 +26,7 @@ function App() {
       id: 4,
       title: "Priority 4",
       color: "#f5eded",
-    }
+    },
   ];
 
   const items = [
@@ -63,21 +63,21 @@ function App() {
       title: "First todo",
       status: true,
       priority: priorities.at(3),
-      tag: null
+      tag: null,
     },
     {
       id: 2,
       title: "Second todo",
       status: true,
       priority: priorities.at(3),
-      tag: null
+      tag: null,
     },
     {
       id: 3,
       title: "Third todo",
       status: true,
       priority: priorities.at(3),
-      tag: null
+      tag: null,
     },
   ]);
   return (
@@ -85,7 +85,12 @@ function App() {
       <Header />
       <div className="AppBody">
         <MenuBar items={items} />
-        <TodoList todo={todo} setTodo={setTodo} items = {items} priorities = {priorities}/>
+        <TodoList
+          todo={todo}
+          setTodo={setTodo}
+          items={items}
+          priorities={priorities}
+        />
       </div>
     </div>
   );
