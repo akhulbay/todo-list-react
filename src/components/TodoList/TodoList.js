@@ -39,7 +39,8 @@ function TodoList({ todo, setTodo , items, priorities}) {
             <div className={ts.container}>
                 <div className={ts.toDoList}>
                     {
-                        todo.map(item => (
+                        todo.sort((a, b) => a.priority.id>b.priority.id ?  1 : -1)
+                            .map(item => (
                             <div className={ts.toDoBlock} key={item.id}>
                                 <div className={ts.toDoBlockContent}>
                                 {
