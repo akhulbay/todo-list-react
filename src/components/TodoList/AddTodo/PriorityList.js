@@ -4,7 +4,7 @@ function PriorityList({priorities, setHideHiddenPriorityDiv, setPriority}) {
 
     function handleFunctions (item) {
         setHideHiddenPriorityDiv(true);
-        setPriority(item)
+        setPriority(item);
     }
 
     return (
