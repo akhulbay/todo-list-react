@@ -124,9 +124,7 @@
     padding: 1px;
 }
 
-.toDoBlockContentDone>svg:hover {
-    fill: red;
-}
+
 
 .toDoBlockContentDoneIconDiv>svg {
     display: none;
