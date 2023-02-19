@@ -124,8 +124,6 @@
 .TakeColorMenu{
     margin-top: 10px;
     border-radius: 5px;
-    background-color: #a1a1a1;
-    color: lightgrey;
     cursor: pointer;
 }
 .SaveButton{

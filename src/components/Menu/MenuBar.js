@@ -10,7 +10,7 @@ function MenuBar({ items, setItems }) {
   const [value, setValue] = useState("");
   const [tageActive, setTageActive] = useState(false);
   const [tageColorActive, setTageColorActive] = useState(false);
-  const [color, setColor] = useState("white");
+  const [color, setColor] = useState("gray");
   const [tageMenuActive, setTageMenuActive] = useState(false);
   const MenuItems = ms.MenuItems;
   const MenuItemsActive = ms.MenuItemsActive;
@@ -50,7 +50,7 @@ function MenuBar({ items, setItems }) {
       },
     ]);
     setValue("");
-    setColor("white");
+    setColor("gray");
   }
 
   return (
@@ -67,6 +67,7 @@ function MenuBar({ items, setItems }) {
         ></textarea>
         <div
           className={ms.TakeColorMenu}
+          style={{ backgroundColor: color }}
           onClick={() => {
             setTageColorActive(!tageColorActive);
           }}
@@ -80,6 +81,7 @@ function MenuBar({ items, setItems }) {
               style={{ backgroundColor: color.color }}
               onClick={() => {
                 setColor(color.color);
+                setTageColorActive(!tageColorActive);
               }}
             >
               {color.color}
