@@ -127,7 +127,6 @@ function MenuBar({ items, setItems }) {
               setTageMenuActive(!tageMenuActive);
             }}
           >
-            {/*onClick={TagAddingMenu} */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="19"
@@ -153,7 +152,10 @@ function MenuBar({ items, setItems }) {
           ))}
         </div>
         <div className={ms.CommonMenuComp}>
-          <h className={ms.TextMenu}>Example</h>
+          <h className={ms.TextMenu}>Account</h>
+        </div>
+        <div className={ms.CommonMenuComp}>
+          <h className={ms.TextMenu}>Done List</h>
         </div>
       </div>
     </div>
