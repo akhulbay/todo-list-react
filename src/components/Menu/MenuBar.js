@@ -141,6 +141,9 @@ function MenuBar({ items, setItems }) {
           </div>
         </ul>
         <div className={tageActive ? MenuItemsActive : MenuItems}>
+          <div className={ms.MenuItem} style={{ color: "white" }}>
+            all
+          </div>
           {items.map((item) => (
             <div className={ms.MenuItem} style={{ color: item.color }}>
               {item.title}
