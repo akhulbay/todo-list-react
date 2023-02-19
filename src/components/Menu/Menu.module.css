@@ -50,7 +50,7 @@
 }
 
 .MenuItem:hover {
-    border-top-left-radius: 20px;
+    border-radius: 20px;
     background-color: #696969;
 }
 
@@ -66,20 +66,18 @@
     margin-top: 2px;
 }
 .TagOption {
+    width: 265px;
     display: flex;
 }
 .SettingTag{
     margin-top: 12px;
     padding-right: 20px;
 }
-.SettingTag:hover{
-    border-radius: 10px;
-    color: #3ea330;
-}
 .SettingTags{
-    padding-left: 20px;
+    padding-left: 10px;
 }
 .SettingTags:hover{
+    color: #3ea330;
     background-color: #696969;
     border-bottom-right-radius: 20px;
     border-top-right-radius: 20px;
@@ -97,4 +95,46 @@
 .CommonMenuComp:hover{
     background-color: #696969;
     border-radius: 20px;
+}
+.AddTagsMenu{
+    display: none;
+}
+.AddTagsMenuActive{
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    margin-left: 320px;
+    width: 120px;
+    height: auto;
+    background-color: #707b6e;
+    position: absolute;
+    display: block;
+}
+.DropMenuItems{
+    width: 100px;
+    height: 50px;
+}
+.DropDownItem{
+    display: block;
+    background-color: aqua;
+    padding: 0px 10px 10px 10px;
+}
+.DropDownButtonArea{
+    display: block;
+}
+.TakeColorMenu{
+    margin-top: 10px;
+    border-radius: 5px;
+    background-color: #a1a1a1;
+    color: lightgrey;
+    cursor: pointer;
+}
+.SaveButton{
+    background-color: #b8b8b8;
+    border: 0;
+    border-radius: 5px;
+    margin-top: 10px;
+    margin-right: 5px;
+}
+.SaveButton:hover{
+    background-color: #a8a8a8;
 }
