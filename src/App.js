@@ -32,26 +32,21 @@ function App() {
   const [items, setItems] = useState([
     {
       id: 0,
-      title: "all",
-      color: "white",
-    },
-    {
-      id: 1,
       title: "work",
       color: "blue",
     },
     {
-      id: 2,
+      id: 1,
       title: "home",
       color: "aqua",
     },
     {
-      id: 3,
+      id: 2,
       title: "personal",
       color: "orange",
     },
     {
-      id: 4,
+      id: 3,
       title: "payment",
       color: "red",
     },

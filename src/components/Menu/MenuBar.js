@@ -2,22 +2,101 @@ import ms from "./Menu.module.css";
 import "./Menu.module.css";
 import uuid from "react-uuid";
 import { useState } from "react";
+// import Dropdown from "react-bootstrap/Dropdown";
+// import DropdownButton from "react-bootstrap/DropdownButton";
+import AddTodo from "../TodoList/AddTodo/AddToDo";
 
 function MenuBar({ items, setItems }) {
+  const [value, setValue] = useState("");
   const [tageActive, setTageActive] = useState(false);
+  const [tageColorActive, setTageColorActive] = useState(false);
+  const [color, setColor] = useState("gray");
+  const [tageMenuActive, setTageMenuActive] = useState(false);
   const MenuItems = ms.MenuItems;
   const MenuItemsActive = ms.MenuItemsActive;
+  const AddTagsMenu = ms.AddTagsMenu;
+  const AddTagsMenuActive = ms.AddTagsMenuActive;
 
-  // function addTag() {
-  //   setItems([...items], {
-  //     id: uuid(),
-  //     title: title,
-  //     color: color,
-  //   });
-  // }
+  const colors = [
+    {
+      id: 1,
+      color: "blue",
+    },
+    {
+      id: 2,
+      color: "aqua",
+    },
+    {
+      id: 3,
+      color: "orange",
+    },
+    {
+      id: 4,
+      color: "red",
+    },
+  ];
+
+  function handleKeyUp(e) {
+    if (e.key === "Enter") addTag();
+  }
+
+  function addTag() {
+    setItems([
+      ...items,
+      {
+        id: uuid(),
+        title: value,
+        color: color,
+      },
+    ]);
+    setValue("");
+    setColor("gray");
+  }
 
   return (
     <div className={ms.MenuBar}>
+      <div className={tageMenuActive ? AddTagsMenuActive : AddTagsMenu}>
+        <textarea
+          cols="13"
+          rows="1"
+          placeholder={"Enter tag name"}
+          value={value}
+          onKeyUp={(e) => handleKeyUp(e)}
+          onChange={(e) => setValue(e.target.value)}
+          maxLength={30}
+        ></textarea>
+        <div
+          className={ms.TakeColorMenu}
+          style={{ backgroundColor: color }}
+          onClick={() => {
+            setTageColorActive(!tageColorActive);
+          }}
+        >
+          Color
+        </div>
+        <div className={tageColorActive ? MenuItemsActive : MenuItems}>
+          {colors.map((color) => (
+            <div
+              className={ms.TakeColorMenu}
+              style={{ backgroundColor: color.color }}
+              onClick={() => {
+                setColor(color.color);
+                setTageColorActive(!tageColorActive);
+              }}
+            >
+              {color.color}
+            </div>
+          ))}
+        </div>
+        <button
+          onClick={() => {
+            addTag();
+          }}
+          className={ms.SaveButton}
+        >
+          Save tag
+        </button>
+      </div>
       <div className={ms.TextBody}>
         <ul className={ms.ul}>
           <li
@@ -42,11 +121,16 @@ function MenuBar({ items, setItems }) {
             </div>
             <h className={ms.TextMenu}>Tags</h>
           </li>
-          <div className={ms.SettingTags}>
+          <div
+            className={ms.SettingTags}
+            onClick={() => {
+              setTageMenuActive(!tageMenuActive);
+            }}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              width="16"
-              height="16"
+              width="19"
+              height="19"
               fill="currentColor"
               class="bi bi-plus-circle"
               viewBox="0 0 16 16"
@@ -58,6 +142,9 @@ function MenuBar({ items, setItems }) {
           </div>
         </ul>
         <div className={tageActive ? MenuItemsActive : MenuItems}>
+          <div className={ms.MenuItem} style={{ color: "white" }}>
+            all
+          </div>
           {items.map((item) => (
             <div className={ms.MenuItem} style={{ color: item.color }}>
               {item.title}
@@ -65,7 +152,10 @@ function MenuBar({ items, setItems }) {
           ))}
         </div>
         <div className={ms.CommonMenuComp}>
-          <h className={ms.TextMenu}>Example</h>
+          <h className={ms.TextMenu}>Account</h>
+        </div>
+        <div className={ms.CommonMenuComp}>
+          <h className={ms.TextMenu}>Done List</h>
         </div>
       </div>
     </div>
