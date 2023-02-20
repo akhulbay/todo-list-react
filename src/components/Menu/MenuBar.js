@@ -6,7 +6,7 @@ import { useState } from "react";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 import AddTodo from "../TodoList/AddTodo/AddToDo";
 
-function MenuBar({ items, setItems }) {
+function MenuBar({ items, setItems, setTitle}) {
   const [value, setValue] = useState("");
   const [tageActive, setTageActive] = useState(false);
   const [tageColorActive, setTageColorActive] = useState(false);
@@ -53,6 +53,9 @@ function MenuBar({ items, setItems }) {
     setColor("gray");
   }
 
+  const filterItems = (tagItem) => {
+    setTitle(tagItem)
+  }
   return (
     <div className={ms.MenuBar}>
       <div className={tageMenuActive ? AddTagsMenuActive : AddTagsMenu}>
@@ -142,11 +145,11 @@ function MenuBar({ items, setItems }) {
           </div>
         </ul>
         <div className={tageActive ? MenuItemsActive : MenuItems}>
-          <div className={ms.MenuItem} style={{ color: "white" }}>
+          <div className={ms.MenuItem} style={{ color: "white" }} onClick={() => filterItems("all")}>
             all
           </div>
           {items.map((item) => (
-            <div className={ms.MenuItem} style={{ color: item.color }}>
+            <div className={ms.MenuItem} style={{ color: item.color }} onClick={() => filterItems(item.title)}>
               {item.title}
             </div>
           ))}

@@ -2,13 +2,13 @@ import ts from "./TodoList.module.css";
 import AddTodo from "./AddTodo/AddToDo";
 import {useState} from "react";
 
-function TodoList({ todo, setTodo , items, priorities}) {
+function TodoList({title, todo, setTodo , items, priorities}) {
 
     const [edit, setEdit] = useState(null);
     const [value, setValue] = useState('')
 
     function deleteToDo(id) {
-        let newToDo = [...todo].filter(item => item.id != id);
+        let newToDo = [...todo].filter(item => item.id !== id);
         setTodo(newToDo);
     }
 
@@ -19,7 +19,7 @@ function TodoList({ todo, setTodo , items, priorities}) {
 
     function saveTodo(id) {
         let newTodo = [...todo].map(item => {
-            if (item.id == id) {
+            if (item.id === id) {
                 item.title = value;
             }
             return item ;
@@ -37,9 +37,26 @@ function TodoList({ todo, setTodo , items, priorities}) {
     return (
         <div className={ts.TodoList}>
             <div className={ts.container}>
+                <div className={ts.toDoListTitle}>
+                    <h2>
+                        {
+                            title
+                        }
+                    </h2>
+                </div>
                 <div className={ts.toDoList}>
                     {
-                        todo.sort((a, b) => a.priority.id>b.priority.id ?  1 : -1)
+                        todo.filter(item => {
+                            if (title === "All" || title === "all") {
+                                return true;
+                            }
+                            else {
+                                if (item.tag !== null && item.tag.title === title) {
+                                    return true;
+                                }
+                            }
+                        })
+                            .sort((a, b) => a.priority.id>b.priority.id ?  1 : -1)
                             .map(item => (
                             <div className={ts.toDoBlock} key={item.id}>
                                 <div className={ts.toDoBlockContent}>

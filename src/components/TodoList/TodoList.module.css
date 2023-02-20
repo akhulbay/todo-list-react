@@ -11,6 +11,10 @@
 
 }
 
+.toDoListTitle > h2 {
+    padding-left: 8px;
+    color: white;
+}
 .toDoBlockContent {
     display: flex;
     width: 100%;

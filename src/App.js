@@ -6,6 +6,7 @@ import TodoList from "./components/TodoList/TodoList";
 import { useState } from "react";
 
 function App() {
+
   const priorities = [
     {
       id: 1,
@@ -28,7 +29,6 @@ function App() {
       color: "#f5eded",
     },
   ];
-
   const [items, setItems] = useState([
     {
       id: 0,
@@ -51,6 +51,8 @@ function App() {
       color: "red",
     },
   ]);
+
+  const [title, setTitle] = useState("All");
 
   const [todo, setTodo] = useState([
     {
@@ -79,8 +81,9 @@ function App() {
     <div className="App">
       <Header />
       <div className="AppBody">
-        <MenuBar items={items} setItems={setItems} />
+        <MenuBar items={items} setItems={setItems} setTitle={setTitle}/>
         <TodoList
+            title={title}
           todo={todo}
           setTodo={setTodo}
           items={items}
