@@ -5,7 +5,7 @@ function Header()  {
     return (
         <div className={hs.Header}>
             <div className={hs.Container}>
-                <img src="homepage.png" alt="" className={hs.Homepage}/>
+                <a href={"/"}><img src="homepage.png" alt="" className={hs.Homepage}/></a>
                 <form id = "form" >
                     <input type="search" id="query"
                            name="q"
@@ -21,9 +21,9 @@ function Header()  {
                     <img src="percentage.png" alt="" className={hs.Percentageicon}/>
                 </button>
                 
-                <button type = "button" className={hs.Question}>
+                <a href={"/done"}><button type = "button" className={hs.Question}>
                     <img src="galochka.png" alt="" className={hs.Questionicon}/>
-                </button>
+                </button></a>
 
                 <button type = "button" className={hs.Account}>
                     <img src="account.png" alt="" className={hs.Accounticon}/>

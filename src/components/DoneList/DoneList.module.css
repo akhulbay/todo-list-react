@@ -1,0 +1,127 @@
+.container {
+    padding-left: 20%;
+    width: 800px;
+}
+
+.toDoList {
+
+}
+
+.AddToDo {
+
+}
+
+.toDoBlockContent {
+    display: flex;
+    width: 100%;
+}
+
+.toDoBlockContent>div {
+    display: flex;
+}
+
+.toDoBlockContentTitleAndTag {
+    text-align: left;
+
+}
+
+.toDoBlockContentTag {
+    width: 100px;
+    font-size: 15px;
+    display: flex;
+}
+
+.toDoBlockContentTag > svg{
+    margin-top: 5px;
+}
+
+.toDoBlockContentTag > span{
+    margin-left: 3px;
+}
+
+.toDoBlockContentTitle{
+    overflow-wrap: break-word;
+    margin-left: 5px;
+    margin-top: 8px;
+    width: 650px;
+    text-align: left;
+}
+
+.toDoBlockContentEdit {
+    cursor: pointer;
+    margin-top: 10px;
+    margin-left: 10px;
+    text-align: right;
+}
+
+.toDoBlockContentEdit>svg {
+    padding: 2px;
+}
+
+.toDoBlockContentEdit>svg:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+
+.toDoBlockContentDelete {
+    cursor: pointer;
+    margin-top: 10px;
+    text-align: right
+}
+
+.toDoBlockContentDelete>svg {
+    padding: 2px;
+
+}
+
+.toDoBlockContentDelete>svg:hover {
+    background-color: lightgrey;
+    border-radius: 5px;
+}
+.toDoBlockContent>div>svg {
+    margin: 10px;
+}
+
+.toDoBlockContentEditInput > input {
+    font-size: 16px;
+    margin: 10px 5px;
+    width: 725px;
+    outline: none;
+    border: none;
+
+}
+
+.toDoBlockContentEditButton>svg {
+    padding: 3px;
+    color: white;
+}
+
+.toDoBlockContentEditButton>svg:hover {
+    padding: 3px;
+    background-color: #918787;
+    border-radius: 5px;
+}
+
+.toDoBlockContentDone {
+
+}
+
+.toDoBlockContentDone>svg {
+    cursor: pointer;
+    color: #3ea330;
+}
+
+.toDoBlockContentDoneIconDiv>svg {
+    display: none;
+    margin-top: 5px;
+}
+
+
+.toDoBlockContentTag {
+    margin-top: 12px;
+    margin-right: 10px;
+}
+
+.doneListTitle {
+    color: white;
+}
