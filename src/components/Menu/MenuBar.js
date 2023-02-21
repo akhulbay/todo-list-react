@@ -6,7 +6,7 @@ import { useState } from "react";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 import AddTodo from "../TodoList/AddTodo/AddToDo";
 
-function MenuBar({ items, setItems, setTitle}) {
+function MenuBar({ items, setItems, setTitle }) {
   const [value, setValue] = useState("");
   const [tageActive, setTageActive] = useState(false);
   const [tageColorActive, setTageColorActive] = useState(false);
@@ -54,8 +54,8 @@ function MenuBar({ items, setItems, setTitle}) {
   }
 
   const filterItems = (tagItem) => {
-    setTitle(tagItem)
-  }
+    setTitle(tagItem);
+  };
   return (
     <div className={ms.MenuBar}>
       <div className={tageMenuActive ? AddTagsMenuActive : AddTagsMenu}>
@@ -145,20 +145,28 @@ function MenuBar({ items, setItems, setTitle}) {
           </div>
         </ul>
         <div className={tageActive ? MenuItemsActive : MenuItems}>
-          <div className={ms.MenuItem} style={{ color: "white" }} onClick={() => filterItems("all")}>
+          <div
+            className={ms.MenuItem}
+            style={{ color: "white" }}
+            onClick={() => filterItems("all")}
+          >
             all
           </div>
           {items.map((item) => (
-            <div className={ms.MenuItem} style={{ color: item.color }} onClick={() => filterItems(item.title)}>
+            <div
+              className={ms.MenuItem}
+              style={{ color: item.color }}
+              onClick={() => filterItems(item.title)}
+            >
               {item.title}
             </div>
           ))}
         </div>
         <div className={ms.CommonMenuComp}>
-          <h className={ms.TextMenu}>Account</h>
+          <a className={ms.TextMenu}>Account</a>
         </div>
         <div className={ms.CommonMenuComp}>
-          <h className={ms.TextMenu}>Done List</h>
+          <a className={ms.TextMenu}>Done List</a>
         </div>
       </div>
     </div>
