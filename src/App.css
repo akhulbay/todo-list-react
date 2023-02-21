@@ -138,3 +138,82 @@
 ::-webkit-scrollbar-thumb:hover {
   background: #555; 
 }
+
+.modal-btn {
+  background-color: rgba(0,0,0,0);
+  color:rgba(0,0,0,0);
+  border-style: none;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  bottom:2px;
+  margin-left: 1380px;
+  margin-bottom: 15px;
+}
+.modal {
+  height: 134vh;
+  width: 39vh;
+  top: -310px;
+  left: 1120px;
+  position: fixed;
+  display: flex;
+  transform: scale(0);
+  align-items: center;
+  justify-content: center;
+  transition: 0.5s;
+}
+.modal.active {
+  transform: scale(1);
+}
+.modal__content {
+  padding: 20px;
+  border-radius:12px;
+  background-color: #3d3d3d;
+  width: 50vw;
+  transform: scale(0.5);
+  transition: 0.4s all;
+
+}
+.modal__content.active {
+  transform: scale(1);
+}
+.table {
+  background-color: #b7b7b7;
+  border-radius: 12px;
+  width: 300px;
+}
+table :hover {
+  color: white;
+}
+.pass_btn {
+  border: none;
+  cursor: pointer;
+  margin-top: 15px;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  background-color: #d37b73;
+  color: white;
+  font-weight: bold;
+  padding: 5px 10px;
+  font-size: 15px;
+}
+
+
+.email_input {
+  border-radius: 20px;
+}
+
+.goal_input {
+  border-radius: 20px;
+  text-align: center;
+}
+
+.password_input {
+  border-radius: 20px;
+  text-align: center;
+}
+.text_modal {
+  margin: 3px;
+  cursor: pointer;
+}

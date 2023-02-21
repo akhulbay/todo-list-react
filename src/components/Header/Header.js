@@ -1,11 +1,13 @@
 import hs from "./Header.module.css";
 import {useState} from "react";
+import {NavLink} from "react-router-dom";
+import Modal from "../Modal/Modal";
 function Header()  {
-
+    const [modalActive,setModalActive]=useState(false)
     return (
         <div className={hs.Header}>
             <div className={hs.Container}>
-                <a href={"/"}><img src="homepage.png" alt="" className={hs.Homepage}/></a>
+                <NavLink to={"/"}><img src="homepage.png" alt="" className={hs.Homepage}/></NavLink>
                 <form id = "form" >
                     <input type="search" id="query"
                            name="q"
@@ -21,14 +23,15 @@ function Header()  {
                     <img src="percentage.png" alt="" className={hs.Percentageicon}/>
                 </button>
                 
-                <a href={"/done"}><button type = "button" className={hs.Question}>
+                <NavLink to={"/done"}><button type = "button" className={hs.Question}   >
                     <img src="galochka.png" alt="" className={hs.Questionicon}/>
-                </button></a>
+                </button></NavLink>
 
-                <button type = "button" className={hs.Account}>
+                <button type = "button" className={hs.Account} onClick={() => setModalActive(true)}>
                     <img src="account.png" alt="" className={hs.Accounticon}/>
                 </button>
 
+                <Modal active={modalActive} setActive={setModalActive}/>
             </div>
         </div>
     )
