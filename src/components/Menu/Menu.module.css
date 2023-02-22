@@ -37,11 +37,13 @@
 }
 
 .MenuItems{
-    display: none;
+    position: absolute;
+    opacity: 0;
 }
 
 .MenuItemsActive{
-    display: block;
+    transition: 3s;
+    opacity: 1;
 }
 
 .MenuItem{
@@ -97,9 +99,6 @@
     border-radius: 20px;
 }
 .AddTagsMenu{
-    display: none;
-}
-.AddTagsMenuActive{
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
     margin-left: 320px;
@@ -107,7 +106,18 @@
     height: auto;
     background-color: #707b6e;
     position: absolute;
-    display: block;
+    opacity: 0;
+}
+.AddTagsMenuActive{
+    transition: 1s;
+    border-radius: 10px;
+    padding: 10px 10px 10px 10px;
+    margin-left: 320px;
+    width: 120px;
+    height: auto;
+    background-color: #707b6e;
+    position: absolute;
+    opacity: 1;
 }
 .DropMenuItems{
     width: 100px;
