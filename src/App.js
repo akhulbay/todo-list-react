@@ -3,7 +3,7 @@ import "./App.css";
 import Header from "./components/Header/Header";
 import MenuBar from "./components/Menu/MenuBar";
 import TodoList from "./components/TodoList/TodoList";
-import {useState} from "react";
+import {useEffect, useState} from "react";
 import DoneList from "./components/DoneList/DoneList";
 import {BrowserRouter, Route, Router, Routes} from "react-router-dom";
 
@@ -56,7 +56,8 @@ function App() {
 
     const [title, setTitle] = useState("All");
 
-    const [todo, setTodo] = useState([
+    const [todo, setTodo] = useState(
+        JSON.parse(localStorage.getItem('todo')) || [
         {
             id: 1,
             title: "First todo",
@@ -80,7 +81,8 @@ function App() {
         },
     ]);
 
-    const [done, setDone] = useState([
+    const [done, setDone] = useState(
+        JSON.parse(localStorage.getItem('done')) || [
         {
             id: 1,
             title: "First done",
@@ -89,6 +91,13 @@ function App() {
             tag: items.at(1),
         },
     ]);
+
+    useEffect(() => {
+        localStorage.setItem('todo', JSON.stringify(todo))
+    }, [todo]);
+    useEffect(() => {
+        localStorage.setItem('done', JSON.stringify(done))
+    }, [done]);
 
     return (
         <BrowserRouter>

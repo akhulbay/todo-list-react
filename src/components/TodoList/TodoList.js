@@ -6,11 +6,21 @@ import uuid from "react-uuid";
 function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
 
     const [edit, setEdit] = useState(null);
-    const [value, setValue] = useState('')
+    const [value, setValue] = useState('');
+
+
+    // function saveTodoLocalStorage() {
+    //     localStorage.setItem('todo', JSON.stringify(todo));
+    // }
+    // function saveDoneLocalStorage() {
+    //     localStorage.setItem('done', JSON.stringify(done));
+    // }
+
 
     function deleteToDo(id) {
         let newToDo = [...todo].filter(item => item.id !== id);
         setTodo(newToDo);
+
     }
 
     function moveTodo(id) {
@@ -27,16 +37,16 @@ function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
                 status: true,
                 priority: newDone.priority,
                 tag: newDone.tag
-            }]
-        );
+            }]);
         console.log(newDone);
-        console.log(done)
+        console.log(done);
         deleteToDo(id);
     }
 
     function editTodo(id, title) {
         setEdit(id);
         setValue(title);
+        // saveTodoLocalStorage();
     }
 
     function saveTodo(id) {
