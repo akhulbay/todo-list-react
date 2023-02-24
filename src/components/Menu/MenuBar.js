@@ -2,11 +2,14 @@ import ms from "./Menu.module.css";
 import "./Menu.module.css";
 import uuid from "react-uuid";
 import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import Modal from "../Modal/Modal";
 // import Dropdown from "react-bootstrap/Dropdown";
 // import DropdownButton from "react-bootstrap/DropdownButton";
 import AddTodo from "../TodoList/AddTodo/AddToDo";
 
 function MenuBar({ items, setItems, setTitle }) {
+  const [modalActive, setModalActive] = useState(false);
   const [value, setValue] = useState("");
   const [tageActive, setTageActive] = useState(false);
   const [tageColorActive, setTageColorActive] = useState(false);
@@ -59,15 +62,13 @@ function MenuBar({ items, setItems, setTitle }) {
   return (
     <div className={ms.MenuBar}>
       <div className={tageMenuActive ? AddTagsMenuActive : AddTagsMenu}>
-        <textarea
-          cols="13"
-          rows="1"
+        <input
+          className={ms.InputChange}
           placeholder={"Enter tag name"}
           value={value}
           onKeyUp={(e) => handleKeyUp(e)}
           onChange={(e) => setValue(e.target.value)}
-          maxLength={30}
-        ></textarea>
+        ></input>
         <div
           className={ms.TakeColorMenu}
           style={{ backgroundColor: color }}
@@ -97,7 +98,7 @@ function MenuBar({ items, setItems, setTitle }) {
           }}
           className={ms.SaveButton}
         >
-          Save tag
+          Save Tag
         </button>
       </div>
       <div className={ms.TextBody}>
@@ -162,12 +163,19 @@ function MenuBar({ items, setItems, setTitle }) {
             </div>
           ))}
         </div>
-        <div className={ms.CommonMenuComp}>
+        <div
+          className={ms.CommonMenuComp}
+          onClick={() => setModalActive(!modalActive)}
+        >
           <a className={ms.TextMenu}>Account</a>
         </div>
-        <div className={ms.CommonMenuComp}>
-          <a className={ms.TextMenu}>Done List</a>
-        </div>
+        <NavLink to={"/done"}>
+          <div className={ms.CommonMenuComp}>
+            <a className={ms.TextMenu}>Done List</a>
+          </div>
+        </NavLink>
+
+        <Modal active={modalActive} setActive={setModalActive} />
       </div>
     </div>
   );
