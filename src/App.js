@@ -92,17 +92,29 @@ function App() {
         },
     ]);
 
+    const [goal, setGoal] = useState(
+        JSON.parse(localStorage.getItem('goal')) || 5);
+
+    const [countDone, setCountDone] = useState(
+        JSON.parse(localStorage.getItem('count')) || 0);
+
+
     useEffect(() => {
         localStorage.setItem('todo', JSON.stringify(todo))
     }, [todo]);
     useEffect(() => {
         localStorage.setItem('done', JSON.stringify(done))
     }, [done]);
-
+    useEffect(() => {
+        localStorage.setItem('goal', JSON.stringify(goal))
+    }, [goal]);
+    useEffect(() => {
+        localStorage.setItem('count', JSON.stringify(countDone))
+    }, [countDone]);
     return (
         <BrowserRouter>
             <div className="App">
-                <Header/>
+                <Header goal={goal} setGoal={setGoal} countDone={countDone}/>
 
                 <div className="AppBody">
                     <MenuBar items={items} setItems={setItems} setTitle={setTitle}/>
@@ -115,6 +127,8 @@ function App() {
                                 setTodo={setTodo}
                                 items={items}
                                 priorities={priorities}
+                                countDone={countDone}
+                                setCountDone={setCountDone}
                                 className="ToDoList"
                             />}/>
                             <Route path={"/done"} element={ <DoneList done={done} setDone={setDone}></DoneList>}/>

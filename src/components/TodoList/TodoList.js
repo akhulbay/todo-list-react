@@ -5,7 +5,7 @@ import uuid from "react-uuid";
 import { createContext} from "react";
 import ReactSwitch from "react-switch";
 export const ThemeContext = createContext(null);
-function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
+function TodoList({done, setDone, title, todo, setTodo, items, priorities, setCountDone, countDone}) {
     const [theme, setTheme] = useState("dark");
 
     const toggleTheme = () => {
@@ -44,6 +44,8 @@ function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
                 priority: newDone.priority,
                 tag: newDone.tag
             }]);
+        let newCount = countDone +1;
+        setCountDone(newCount);
         console.log(newDone);
         console.log(done);
         deleteToDo(id);
