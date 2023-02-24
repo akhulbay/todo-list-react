@@ -43,6 +43,7 @@
 .AppBody {
   display: flex;
   height: 100%;
+  background-color: #a6a6a6;
 }
 
 .hide-div {
@@ -215,34 +216,4 @@ table :hover {
 .text_modal {
   margin: 3px;
   cursor: pointer;
-}
-#light {
-  background-color: #fafafa;
-  width: 100%;
-}
-
-#dark {
-  background-color: darkgray;
-  width: 100%;
-}
-
-#light .main {
-  background-color: #fff;
-}
-
-#dark .main {
-  background-color: darkgray;
-}
-.switch {
-   display: flex;
-   width: 100px;
-  margin-top: 20px;
-   margin-left: 770px;
-   height: 30px;
-   justify-content: center;
-   align-items: center;
- }
-
-.switch label {
-  margin: 20px;
 }
