@@ -4,7 +4,7 @@
 }
 
 .toDoList {
-    
+
 }
 
 .AddToDo {
@@ -13,7 +13,7 @@
 
 .toDoListTitle > h2 {
     padding-left: 8px;
-    color: white;
+    color: black;
 }
 .toDoBlockContent {
     display: flex;

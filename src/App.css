@@ -42,8 +42,7 @@
 
 .AppBody {
   display: flex;
-  background-color: #656565;
-  height: 1000px;
+  height: 100%;
 }
 
 .hide-div {
@@ -126,17 +125,17 @@
 
 /* Track */
 ::-webkit-scrollbar-track {
-  background: #b7b7b7; 
+  background: #b7b7b7;
 }
- 
+
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #888; 
+  background: #888;
 }
 
 /* Handle on hover */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; 
+  background: #555;
 }
 
 .modal-btn {
@@ -216,4 +215,34 @@ table :hover {
 .text_modal {
   margin: 3px;
   cursor: pointer;
+}
+#light {
+  background-color: #fafafa;
+  width: 100%;
+}
+
+#dark {
+  background-color: darkgray;
+  width: 100%;
+}
+
+#light .main {
+  background-color: #fff;
+}
+
+#dark .main {
+  background-color: darkgray;
+}
+.switch {
+   display: flex;
+   width: 100px;
+  margin-top: 20px;
+   margin-left: 770px;
+   height: 30px;
+   justify-content: center;
+   align-items: center;
+ }
+
+.switch label {
+  margin: 20px;
 }

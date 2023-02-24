@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 import Modal from "../Modal/Modal";
 function Header() {
   const [modalActive, setModalActive] = useState(false);
-  const [dailyGoal, setDailyGoal] = useState(5);
   return (
     <div className={hs.Header}>
       <div className={hs.Container}>
