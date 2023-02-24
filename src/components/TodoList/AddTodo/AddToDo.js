@@ -19,6 +19,10 @@ function AddTodo({todo, setTodo, items, priorities}) {
 
     }
 
+    // function saveTodoLocalStorage() {
+    //     localStorage.setItem('todo', JSON.stringify(todo));
+    // }
+
     function saveTodo() {
         setTodo(
             [...todo, {
@@ -28,7 +32,7 @@ function AddTodo({todo, setTodo, items, priorities}) {
                 priority: priority,
                 tag: tag
             }]
-        )
+        );
         setValue('');
         setTag(null);
         setPriority(priorities.at(3));
