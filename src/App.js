@@ -35,22 +35,22 @@ function App() {
     {
       id: 0,
       title: "work",
-      color: "blue",
+      color: "black",
     },
     {
       id: 1,
       title: "home",
-      color: "aqua",
+      color: "darkred",
     },
     {
       id: 2,
       title: "personal",
-      color: "orange",
+      color: "darkblue",
     },
     {
       id: 3,
       title: "payment",
-      color: "red",
+      color: "darkslategrey",
     },
   ]);
 

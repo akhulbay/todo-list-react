@@ -84,7 +84,7 @@
 .hiddenPriorities {
     z-index: 1;
     position: absolute;
-    background-color: #918787;
+    background-color: #b7b7b7;
     border-radius: 10px;
     margin-top: 25px;
     margin-left: 2px;
@@ -105,6 +105,7 @@
 
 .hiddenPriorities > ul >li >svg {
     margin-right: 5px;
+
 }
 
 .priorityBlock > hr {

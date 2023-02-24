@@ -23,19 +23,23 @@ function MenuBar({ items, setItems, setTitle }) {
   const colors = [
     {
       id: 1,
-      color: "blue",
+      color: "#2a79d4",
+      name: "blue",
     },
     {
       id: 2,
-      color: "aqua",
+      color: "#f7ef52",
+      name: "yellow",
     },
     {
       id: 3,
-      color: "orange",
+      color: "#2f9c21",
+      name: "green" ,
     },
     {
       id: 4,
-      color: "red",
+      color: "orangered",
+      name: "red",
     },
   ];
 
@@ -88,7 +92,7 @@ function MenuBar({ items, setItems, setTitle }) {
                 setTageColorActive(!tageColorActive);
               }}
             >
-              {color.color}
+              {color.name}
             </div>
           ))}
         </div>
