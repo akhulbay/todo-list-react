@@ -27,10 +27,11 @@ function App() {
     {
       id: 4,
       title: "Priority 4",
-      color: "#f5eded",
+      color: "#110f0f",
     },
   ];
-  const [items, setItems] = useState([
+  const [items, setItems] = useState(
+      JSON.parse(localStorage.getItem('tags')) || [
     {
       id: 0,
       title: "work",
@@ -113,6 +114,9 @@ function App() {
   useEffect(() => {
     localStorage.setItem("count", JSON.stringify(countDone));
   }, [countDone]);
+  useEffect(() => {
+    localStorage.setItem("tags", JSON.stringify(items));
+  }, [items]);
   return (
     <BrowserRouter>
       <div className="App">

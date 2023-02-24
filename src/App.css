@@ -152,7 +152,7 @@
   margin-bottom: 15px;
 }
 .modal {
-  height: 134vh;
+  height: 129vh;
   width: 39vh;
   top: -310px;
   left: 1120px;
@@ -169,7 +169,7 @@
 .modal__content {
   padding: 20px;
   border-radius:12px;
-  background-color: #3d3d3d;
+  background-color: #3644a1 ;
   width: 50vw;
   transform: scale(0.5);
   transition: 0.4s all;
@@ -184,7 +184,7 @@
   width: 300px;
 }
 table :hover {
-  color: white;
+  color: #3644a1 ;
 }
 .pass_btn {
   border: none;

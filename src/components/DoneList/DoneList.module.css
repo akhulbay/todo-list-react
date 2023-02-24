@@ -123,9 +123,9 @@
 }
 
 .doneListTitle {
-    color: white;
+    color: black;
 }
 .DoneList {
     width: 100%;
-    background-color: #a6a6a6;
+    background-color: whitesmoke;
 }

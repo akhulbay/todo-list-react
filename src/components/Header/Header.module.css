@@ -21,17 +21,18 @@
     border-radius: 20px;
     color: white;
     padding: 5px 0 5px 34px;
-    background: hsla(0,0%,100%,.2);
+    background: hsla(0,0%,90%,.2);
     transition: width .2s ease-in,background .15s cubic-bezier(.4,0,.2,1);
 }
 .Search::placeholder {
-    color: black;
+    color: white;
 }
 .Searchicon {
     width: 18px;
     height: 18px;
     margin-left: -27px;
-    margin-bottom: -3px;
+    margin-bottom: -4px;
+    color: white;
 }
 .Homepage {
     height: 28px;
@@ -46,6 +47,7 @@
     display: flex;
     height: 44px;
     padding: 0 12px;
+    color:white;
 }
 .Percentage {
     display: flex;
@@ -61,11 +63,13 @@
     margin-left: 5px;
     margin-top: 5px;
     font-size: 15px;
+    color: white;
 }
 .Percentageicon {
     width: 24px;
     height: 24px;
     cursor: pointer;
+    color:white;
 }
 .Question {
     width: 60px;
@@ -78,6 +82,8 @@
     width: 22px;
     height: 22px;
     cursor: pointer;
+    color: white;
+    margin-left: 10px;
 }
 .Account {
     width: 60px;
@@ -90,6 +96,7 @@
     width: 22px;
     height: 22px;
     cursor: pointer;
+    color:white;
 }
 .dailyGoalCSS{
     padding-top: 17px;
