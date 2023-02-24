@@ -2,9 +2,15 @@ import ts from "./TodoList.module.css";
 import AddTodo from "./AddTodo/AddToDo";
 import {useState} from "react";
 import uuid from "react-uuid";
-
+import { createContext} from "react";
+import ReactSwitch from "react-switch";
+export const ThemeContext = createContext(null);
 function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
+    const [theme, setTheme] = useState("dark");
 
+    const toggleTheme = () => {
+        setTheme((curr) => (curr === "light" ? "dark" : "light"));
+    };
     const [edit, setEdit] = useState(null);
     const [value, setValue] = useState('')
 
@@ -57,8 +63,13 @@ function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
     }
 
     return (
-        <div className={ts.TodoList}>
+        <ThemeContext.Provider value={{ theme, toggleTheme }}>
+        <div className={ts.TodoList} id={theme}>
             <div className={ts.container}>
+                <div className="switch">
+                    <label> {theme === "light" ? "Light" : "Dark"}</label>
+                    <ReactSwitch onChange={toggleTheme} checked={theme === "dark"} />
+                </div>
                 <div className={ts.toDoListTitle}>
                     <h2>
                         {
@@ -182,6 +193,7 @@ function TodoList({done, setDone, title, todo, setTodo, items, priorities}) {
                 </div>
             </div>
         </div>
+        </ThemeContext.Provider>
     )
 }
 

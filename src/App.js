@@ -94,10 +94,10 @@ function App() {
         <BrowserRouter>
             <div className="App">
                 <Header/>
+
                 <div className="AppBody">
                     <MenuBar items={items} setItems={setItems} setTitle={setTitle}/>
-
-                        <Routes>
+                    <Routes>
                             <Route path={""} element={<TodoList
                                 done={done}
                                 setDone={setDone}

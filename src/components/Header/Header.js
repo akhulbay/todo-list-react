@@ -1,11 +1,13 @@
 import hs from "./Header.module.css";
-import {useState} from "react";
+import {createContext, useState} from "react";
 import {NavLink} from "react-router-dom";
 import Modal from "../Modal/Modal";
+import ReactSwitch from "react-switch";
 function Header()  {
+
     const [modalActive,setModalActive]=useState(false)
     return (
-        <div className={hs.Header}>
+        <div className={hs.Header} >
             <div className={hs.Container}>
                 <NavLink to={"/"}><img src="homepage.png" alt="" className={hs.Homepage}/></NavLink>
                 <form id = "form" >
@@ -32,6 +34,7 @@ function Header()  {
                 </button>
 
                 <Modal active={modalActive} setActive={setModalActive}/>
+
             </div>
         </div>
     )
