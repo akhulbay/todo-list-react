@@ -3,7 +3,7 @@ import { createContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Modal from "../Modal/Modal";
 import ReactSwitch from "react-switch";
-function Header() {
+function Header({goal, setGoal, countDone}) {
   const [modalActive, setModalActive] = useState(false);
   return (
     <div className={hs.Header}>
@@ -25,6 +25,7 @@ function Header() {
         <div className={hs.Container2}></div>
         <button type="button" className={hs.Percentage}>
           <img src="percentage.png" alt="" className={hs.Percentageicon} />
+          <span>{countDone}/{goal}</span>
         </button>
 
         <NavLink to={"/done"}>
@@ -41,7 +42,7 @@ function Header() {
           <img src="account.png" alt="" className={hs.Accounticon} />
         </button>
 
-        <Modal active={modalActive} setActive={setModalActive} />
+        <Modal active={modalActive} setActive={setModalActive} goal={goal} setGoal={setGoal}/>
       </div>
     </div>
   );

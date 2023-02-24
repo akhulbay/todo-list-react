@@ -2,16 +2,19 @@ import ts from "./TodoList.module.css";
 import AddTodo from "./AddTodo/AddToDo";
 import { useState } from "react";
 import uuid from "react-uuid";
-function TodoList({ done, setDone, title, todo, setTodo, items, priorities }) {
+function TodoList({
+  done,
+  setDone,
+  title,
+  todo,
+  setTodo,
+  items,
+  priorities,
+  setCountDone,
+  countDone,
+}) {
   const [edit, setEdit] = useState(null);
   const [value, setValue] = useState("");
-
-  // function saveTodoLocalStorage() {
-  //     localStorage.setItem('todo', JSON.stringify(todo));
-  // }
-  // function saveDoneLocalStorage() {
-  //     localStorage.setItem('done', JSON.stringify(done));
-  // }
 
   function deleteToDo(id) {
     let newToDo = [...todo].filter((item) => item.id !== id);
@@ -35,6 +38,53 @@ function TodoList({ done, setDone, title, todo, setTodo, items, priorities }) {
         tag: newDone.tag,
       },
     ]);
+    console.log(newDone);
+    console.log(done);
+    deleteToDo(id);
+  }
+
+  function editTodo(id, title) {
+    setEdit(id);
+    setValue(title);
+    // saveTodoLocalStorage();
+  }
+
+  function saveTodo(id) {
+    let newTodo = [...todo].map((item) => {
+      if (item.id === id) {
+        item.title = value;
+      }
+      return item;
+    });
+    setTodo(newTodo);
+    setEdit(null);
+  }
+
+  function handleKeyUp(e, id) {
+    if (e.key === "Enter") {
+      saveTodo(id);
+    }
+  }
+
+  function moveTodo(id) {
+    let newDone;
+    todo.map((item) => {
+      if (item.id === id) {
+        newDone = item;
+      }
+    });
+    setDone([
+      ...done,
+      {
+        id: uuid(),
+        title: newDone.title,
+        status: true,
+        priority: newDone.priority,
+        tag: newDone.tag,
+      },
+    ]);
+    let newCount = countDone + 1;
+    setCountDone(newCount);
     console.log(newDone);
     console.log(done);
     deleteToDo(id);
