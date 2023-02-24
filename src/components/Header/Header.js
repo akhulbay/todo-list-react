@@ -1,8 +1,10 @@
 import hs from "./Header.module.css";
-import { useState } from "react";
+import { createContext, useState } from "react";
 import { NavLink } from "react-router-dom";
 import Modal from "../Modal/Modal";
+import ReactSwitch from "react-switch";
 function Header() {
+  const [dailyGoal, setDailyGoal] = useState(5);
   const [modalActive, setModalActive] = useState(false);
   return (
     <div className={hs.Header}>
@@ -18,9 +20,7 @@ function Header() {
             placeholder="Search"
             className={hs.Search}
           />
-          <img src="lupadlypoiska.png" alt="" className={hs.Searchicon} />
         </form>
-
         <div className={hs.Container2}></div>
         <button type="button" className={hs.Percentage}>
           <img src="percentage.png" alt="" className={hs.Percentageicon} />
@@ -33,14 +33,6 @@ function Header() {
             <img src="galochka.png" alt="" className={hs.Questionicon} />
           </button>
         </NavLink>
-
-        <button
-          type="button"
-          className={hs.Account}
-          onClick={() => setModalActive(true)}
-        >
-          <img src="account.png" alt="" className={hs.Accounticon} />
-        </button>
 
         <Modal active={modalActive} setActive={setModalActive} />
       </div>
