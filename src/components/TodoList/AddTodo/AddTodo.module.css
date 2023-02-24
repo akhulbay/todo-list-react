@@ -2,6 +2,8 @@
 .addToDoContent {
     margin-top: 2%;
     width: 500px;
+    height: 100%;
+    margin-bottom: 50px;
     margin-left: 18%;
     border: 1px solid lightgrey;
     border-radius: 10px;
