@@ -13,7 +13,7 @@ const Modal = ({active,setActive, goal, setGoal}) => {
                     <h4 className="text_modal">Daily Goal:</h4>
                     <input type="number" min="3" max="100" className="goal_input" value={value} onChange={ (e) => setValue(e.target.value)}/>
                     <h4 className="text_modal">Email:</h4>
-                    <input type="text" value="dauletova@gmail.com" className="email_input"/>
+                    <input type="text" value="akhulbai8@gmail.com" className="email_input"/>
                     <h4 className="text_modal">Password:</h4>
                     <input type="password" value="12345678" className={"password_input"}/>
                     <br/>
